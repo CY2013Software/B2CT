@@ -1,0 +1,56 @@
+﻿@model List<MvcShopping.Models.ProductCategory>
+
+<div id="left">
+<h2>商品类别</h2>
+<ul id="productcategory">
+    @foreach (var item in Model)
+    {
+        <li>@Html.ActionLink(item.Name,"ProductList",new{
+           id=item.Id})
+        </li>
+    }
+</ul>
+</div>
+<div id="right">
+<h3>热门商品</h3>
+<ul>
+    <li>
+        <a href="#">
+            <img alt="#" src="~/images/mi/mi-123.png" />
+        <p>香稻嘉鱼大米5KG</p>
+        </a>
+     </li>
+    <li>
+        <a href="#">
+        <img alt="#" src="~/images/mi/mi-3372.jpg"/>
+        <p>黑糯米500g</p>
+        </a>
+     </li>
+    <li>
+        <a href="#">
+        <img alt="#" src="~/images/you/you-9956.jpg"/>
+        <p>金龙鱼葵花籽调和油5L</p>
+        </a>
+     </li>
+    <li>
+        <a href="#">
+        <img alt="#" src="~/images/you/you-4451.jpg"/>
+        <p>金龙鱼花生浓香食用调和油4L</p>
+        </a>
+     </li>
+    <li>
+        <a href="#">
+        <img alt="#" src="~/images/yan/yan-7745.png"/>
+        <p>无碘天山湖盐 300g</p>
+        </a>
+     </li>
+    <li>
+        <a href="#">
+        <img alt="#" src="~/images/you/you-4654.jpg"/>
+        <p>万字特选有机酱油（本酿造）500ml</p>
+        </a>
+     </li>
+
+</ul>
+
+</div>
