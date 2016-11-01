@@ -21,16 +21,10 @@ namespace MvcShopping.Controllers
             if (data.Count == 0)
             {
                 db.ProdcutCategories.Add(
-                     new ProductCategory() { Id = 1, Name = "文具" }
+                     new ProductCategory() { Id = 1, Name = "第一类商品" }
                 );
                 db.ProdcutCategories.Add(
-                    new ProductCategory() { Id = 2, Name = "礼品" }
-                    );
-                db.ProdcutCategories.Add(
-                    new ProductCategory() { Id = 3, Name = "书籍" }
-                    );
-                db.ProdcutCategories.Add(
-                    new ProductCategory() { Id = 4, Name = "美劳用品" }
+                    new ProductCategory() { Id = 2, Name = "第二类商品" }
                     );
                 db.SaveChanges();
                 data = db.ProdcutCategories.ToList();
@@ -56,9 +50,7 @@ namespace MvcShopping.Controllers
                           productCategory = productCategory,
                           Name = "原子笔",
                           Description = "N/A",
-                          Color = "黑色",
                           Price = 100,
-                          PublishOn = DateTime.Now
 
                       });
                     productCategory.Products.Add(
@@ -67,9 +59,8 @@ namespace MvcShopping.Controllers
                            productCategory = productCategory,
                            Name = "铅笔",
                            Description = "N/A",
-                           Color = "黑色",
                            Price = 150,
-                           PublishOn = DateTime.Now
+           
 
                        });
 

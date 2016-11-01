@@ -30,18 +30,17 @@ namespace MvcShopping.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add([Bind(Exclude = "PublishOn")]Product product)
+        public ActionResult Add([Bind(Exclude = "ProductCategory")]Product product)
         {
             var chk_product = db.Products.Where(p => p.Name
                 == product.Name).FirstOrDefault();
             if (chk_product != null)
             {
-                ModelState.AddModelError("Email",
-                    "你输入的Email已经存在");
+                ModelState.AddModelError("Name",
+                    "你输入的商品已存在");
             }
             if (ModelState.IsValid)
             {
-                product.PublishOn = DateTime.Now;
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
